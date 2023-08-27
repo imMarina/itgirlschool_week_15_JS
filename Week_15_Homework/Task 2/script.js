@@ -27,11 +27,9 @@ console.log(squareNumbers); // [0,1,4,9,16,25,36,49,64,81,100]
 
 
 // - Отсортируйте числа в порядке убывания
-const reverseNumbers = squareNumbers.sort((a, b) => b - a); // [1, 8, 22];
+const reverseNumbers = squareNumbers.sort((a, b) => b - a); // 
 console.log(reverseNumbers);
 
 
-
-
-
-4. Выведите полученный массив `numbers` в консоль
+// 4. Выведите полученный массив `numbers` в консоль
+console.log(reverseNumbers);
