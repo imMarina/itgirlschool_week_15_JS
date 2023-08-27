@@ -24,6 +24,7 @@ for (; i > 0; i--) {
   console.log(i)
 }
 
+
 //Задание 4
 // Выведите таблицу умножения на 5 от 1 до 10
 
@@ -113,16 +114,12 @@ for (let num of arrayTwo) {
 // Подсказка: вам понадобится метод массивов split
 const sentences = ['Hello, world!', 'How are you?'];
 
-/*
-const getWord = str => str.split(' ').map(word => word.length);
-console.log(getWord(sentences));
-
-const word = sentences.split('');
-console.log(word);
-// console.log(sentences.split(''));
 for (let word of sentences) {
-    console.log(word);
-} */
+  console.log(word);
+}
+
+// const getWord = str => str.split(' ').map(word => word.length);
+// console.log(getWord(sentences));
 
 
 //Задание 12
@@ -164,12 +161,8 @@ const greeting = 'Hello, world!';
 let vowelCount = 0;
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-// console.log(greeting.includes(vowels));
-// greeting.split('').filter(i => vowels.includes(i)).length;
-/*
-function countVowels (greeting, vowels) {
-    return greeting.includes(vowels)
-  } */
+const countVowels = string => [...string].filter(letter => vowels.includes(letter)).length;
+console.log(countVowels(greeting));        
 
 
 //Задание 16
@@ -191,6 +184,7 @@ while (j < 11) {
     console.log(j)
     j++
 }
+
 
 //Задание 18 
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
@@ -239,13 +233,21 @@ for (let num of random) {
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
 
-const printNum = [];
-printNum.length = 100;
+let printNum = [];
+let i = 1;
 
-const isThree = (num) => num % 3 !== 0;
+do {
+  console.log(i);
+  printNum.push(i);
+  i++;
+} while (i < 101);
+
+console.log(printNum);
+
+const isThree = (num) => num % 3 !== 0; 
 const checkThree = printNum.filter(isThree);
 
-// console.log();
+console.log(checkThree);
 
 
 //Задание 22
