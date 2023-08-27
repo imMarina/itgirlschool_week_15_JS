@@ -21,18 +21,22 @@ const container = document.querySelector('#container');
 const list = container.querySelector('ul');
 
 for (let i = 0; i < temp.length; i++) {
-    const newLi = temp.map((elem, index) => `<p>${cities[index]}  ${elem}°C </p>`);
-    list.innerHTML = newLi.join('');
+    const newParagraph = temp.map((elem, index) => `<p>${cities[index]}  ${elem}°C </p>`);
+    list.innerHTML = newParagraph.join('');
 }
 
 
 // 6. Найдите максимальную и минимальную температуру из массива с температурами. Для этого создайте две переменные и инициализируйте их значениями, которые гарантированно будут больше и меньше любой возможной температуры соответственно.
 
-const minTemp = temp.sort((a,b)=>a-b);
-// console.log(Math.min(...temp));
-const maxTemp = temp.sort((a,b)=>b-a);
-// console.log(Math.max(...temp));
-list.innerHTML = minTemp.join('');
-list.innerHTML = maxTemp.join('');
+const minTemp = Math.min(...temp);
+const maxTemp = Math.max(...temp);
+console.log(minTemp);
+console.log(maxTemp);
+
+// const minTemp = temp.sort((a,b)=>a-b);
+// const maxTemp = temp.sort((a,b)=>b-a);
+
+// list.innerHTML = .join('');
+// list.innerHTML = .join('');
 
 // 7. Выведите информацию с погодой в разных городах, а также максимальной и минимальной температурой на экран. 
