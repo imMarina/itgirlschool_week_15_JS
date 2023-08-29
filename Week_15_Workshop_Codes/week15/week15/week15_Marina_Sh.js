@@ -114,12 +114,14 @@ for (let num of arrayTwo) {
 // Подсказка: вам понадобится метод массивов split
 const sentences = ['Hello, world!', 'How are you?'];
 
-for (let word of sentences) {
-  console.log(word);
+for (let sentence of sentences) {
+  const words = sentence.split(' ');
+  for (const word of words) {
+    console.log(word);
+  }
 }
 
 // const getWord = str => str.split(' ').map(word => word.length);
-// console.log(getWord(sentences));
 
 
 //Задание 12
@@ -159,10 +161,17 @@ console.log(words);
 // Подсказка: вам понадобится метод includes
 const greeting = 'Hello, world!';
 let vowelCount = 0;
-const vowels = ['a', 'e', 'i', 'o', 'u'];
+const vowels = ['a', 'e', 'i', 'o', 'u'];     
 
-const countVowels = string => [...string].filter(letter => vowels.includes(letter)).length;
-console.log(countVowels(greeting));        
+for (let char of greeting) {
+  if (vowels.includes(char.toLowerCase())) {
+    vowelCount++;
+  }
+}
+console.log(vowelCount);
+
+// const countVowels = string => [...string].filter(letter => vowels.includes(letter)).length;
+// console.log(countVowels(greeting));   
 
 
 //Задание 16
@@ -202,57 +211,74 @@ while (k > 0) {
 const allNumbers = [1, 2, 3, -4, 5];
 let allPositive = true;
 
-for (let number of allNumbers) {
+while (index < allNumbers.length) {
+  if (allNumbers[index] <= 0) {
+    allPositive = false;
+    break;
+  }
+  console.log(allNumbers[index])
+  index++;
+}
+
+/* for (let number of allNumbers) {
   if (number >= 0) {
     console.log(number)
   } else break;
-}
-
-/* while (allPositive) {
-    console.log(allNumbers);
-    break;
-}
-const result = allNumbers.filter(item => item > 0); */
+} */
 
 
 //Задание 20
 // Выведите значения элементов массива до первого отрицательного числа используя цикл do...while
 const random = [2, 4, 6, -3, 8, 10];
 
-for (let num of random) {
+let index = 0;
+do {
+  console.log(random[index]);
+  index++;
+} while (random[index] >= 0 && index < random.length);
+
+
+/* for (let num of random) {
     if (num >= 0) {
       console.log(num)
     } else break;
-  }
-
-// const positiveNumbers = random.filter(function (num) {
-//  return num >= 0;
-// });
+  } */
 
 
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
 
 let printNum = [];
-let i = 1;
 
+let num = 1;
+do {
+  if (num % 3 !== 0) {
+    console.log(num);
+  }
+  num++;
+} while (num <= 100);
+
+/*
+let i = 1;
 do {
   console.log(i);
   printNum.push(i);
   i++;
 } while (i < 101);
-
 console.log(printNum);
-
 const isThree = (num) => num % 3 !== 0; 
 const checkThree = printNum.filter(isThree);
-
-console.log(checkThree);
+console.log(checkThree); */
 
 
 //Задание 22
 // Запросить у пользователя числа, пока сумма введенных чисел не станет больше 100
 
+let sum = 0;
+do {
+  const input = parseInt(prompt('Введите число:'));
+  sum += input;
+} while (sum <= 100);
 
 
 //Задание 23

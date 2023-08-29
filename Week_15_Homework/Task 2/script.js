@@ -15,7 +15,11 @@ const positiveNumbers = numbers.filter(function (num) {
   return num >= 0;
 });
 console.log(positiveNumbers); // [0,1,2,3,4,5,6,7,8,9,10];
+numbers.splice(0, 10); 
 
+// slice
+// numbers.splice(0, 10)
+// console.log(numbers);
 
 // - Возведите каждое число в квадрат
 
