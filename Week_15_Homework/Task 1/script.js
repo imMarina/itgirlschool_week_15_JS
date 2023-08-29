@@ -33,10 +33,11 @@ const maxTemp = Math.max(...temp);
 console.log(minTemp);
 console.log(maxTemp);
 
-// const minTemp = temp.sort((a,b)=>a-b);
-// const maxTemp = temp.sort((a,b)=>b-a);
-
-// list.innerHTML = .join('');
-// list.innerHTML = .join('');
 
 // 7. Выведите информацию с погодой в разных городах, а также максимальной и минимальной температурой на экран. 
+
+const minMaxInfo = document.createElement('p');
+minMaxInfo.className = 'fs-5';
+minMaxInfo.innerHTML = `Минимальная температура: ${minTemp}°C<br>Максимальная температура: ${maxTemp}°C`;
+
+container.appendChild(minMaxInfo);
